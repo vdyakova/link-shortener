@@ -8,6 +8,7 @@ import (
 	"linkSh/internal/cashe"
 	"strings"
 )
+
 //go:generate mockgen -source=shortener.go -destination=mocks/mock_storage.go -package=mocks
 
 type ShortenerService interface {
@@ -29,7 +30,7 @@ func (l *shortenersrv) ShortLink(ctx context.Context, data string) (string, erro
 		return "", err
 	}
 	if exists {
-		return "", errors.New("url exists")
+		return "URL-long and URL-sh already exists", nil
 	}
 	newLink, err := Shortener(data)
 	if err != nil {
