@@ -3,8 +3,8 @@ package handler
 import (
 	"encoding/json"
 	"fmt"
+	"linkSh/httpkit"
 	"linkSh/internal/service"
-	"linkSh/utils"
 	"net/http"
 )
 
@@ -29,10 +29,10 @@ func (s *ShortenerHandler) ShortenerLink(w http.ResponseWriter, r *http.Request)
 	}
 	link, err := s.service.ShortLink(ctx, requestData.Url)
 	if err != nil {
-		utils.HTTPResponse(w, "no success", http.StatusInternalServerError)
+		httpkit.HTTPResponse(w, "no success", http.StatusInternalServerError)
 		return
 	}
-	utils.HTTPResponse(w, link, http.StatusOK)
+	httpkit.HTTPResponse(w, link, http.StatusOK)
 
 }
 
@@ -47,21 +47,21 @@ func (s *ShortenerHandler) OriginalLink(w http.ResponseWriter, r *http.Request) 
 	}
 	link, err := s.service.LongLink(ctx, requestData.Url)
 	if err != nil {
-		utils.HTTPResponse(w, "no success", http.StatusInternalServerError)
+		httpkit.HTTPResponse(w, "no success", http.StatusInternalServerError)
 		fmt.Println(err)
 		return
 	}
-	utils.HTTPResponse(w, link, http.StatusOK)
+	httpkit.HTTPResponse(w, link, http.StatusOK)
 
 }
 func (s *ShortenerHandler) GiveAboutLink(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 	links, err := s.service.GiveInfoAboutLink(ctx)
 	if links == nil {
-		utils.HTTPResponse(w, "not links", http.StatusNotImplemented)
+		httpkit.HTTPResponse(w, "not links", http.StatusNotImplemented)
 	}
 	if err != nil {
 		return
 	}
-	utils.HTTPResponse(w, links, http.StatusOK)
+	httpkit.HTTPResponse(w, links, http.StatusOK)
 }

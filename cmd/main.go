@@ -14,6 +14,6 @@ func main() {
 		return
 	}
 	if err := a.Run(); err != nil {
-		log.Fatal("Failed application %s", err.Error())
+		log.Fatalf("Failed application %s", err.Error())
 	}
 }
