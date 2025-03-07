@@ -1,10 +1,10 @@
-package service
+package shortener
 
 import (
 	"context"
 	"errors"
 	"go.uber.org/mock/gomock"
-	"linkSh/internal/service/mocks"
+	"linkSh/internal/shortener/mocks"
 	"testing"
 )
 
