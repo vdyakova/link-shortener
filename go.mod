@@ -1,4 +1,4 @@
-module linkSh
+module github.com/vdyakova/link-shortener
 
 go 1.23
 

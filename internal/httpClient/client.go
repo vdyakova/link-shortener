@@ -3,7 +3,7 @@ package httpClient
 import (
 	"context"
 	"encoding/json"
-	"linkSh/pkg/httpkit"
+	"github.com/vdyakova/link-shortener/pkg/httpkit"
 	"log"
 	"net/http"
 )

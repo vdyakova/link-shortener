@@ -2,7 +2,7 @@ package main
 
 import (
 	"context"
-	"linkSh/internal/app"
+	"github.com/vdyakova/link-shortener/internal/app"
 	"log"
 )
 

@@ -3,10 +3,10 @@ package app
 import (
 	"context"
 	"github.com/gorilla/mux"
-	"linkSh/internal/cache"
-	"linkSh/internal/httpClient"
-	"linkSh/internal/httpClient/middleware"
-	"linkSh/internal/shortener"
+	"github.com/vdyakova/link-shortener/internal/cache"
+	"github.com/vdyakova/link-shortener/internal/httpClient"
+	"github.com/vdyakova/link-shortener/internal/httpClient/middleware"
+	"github.com/vdyakova/link-shortener/internal/shortener"
 	"log"
 	"net/http"
 )
